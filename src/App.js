@@ -12,7 +12,10 @@ import Header from './Components/Header/Header';
 // pages
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
+import User from './Pages/User/User';
 
+// virificacao de rota do usuario logado
+import ProtectRoutes from './Helper/ProtectRoutes/ProtectRoutes';
 
 const App = () => {
   return (
@@ -22,6 +25,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login/*" element={<Login />} />
+          <ProtectRoutes path="/conta/*" element={<User />} />
         </Routes>
         <Footer />
       </UserStorage>

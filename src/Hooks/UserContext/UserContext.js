@@ -75,6 +75,8 @@ export const UserStorage = ({ children }) => {
         } finally {
           setLoading(false);
         }
+      }else{
+        setLogin(false);
       }
     }
     autoLogin();
@@ -83,7 +85,7 @@ export const UserStorage = ({ children }) => {
   
 
   return (
-    <UserContext.Provider value={{ userLogin, userLogout, data, error, loading }}>
+    <UserContext.Provider value={{ userLogin, userLogout, data, error, loading,login }}>
       {children}
     </UserContext.Provider>
   )

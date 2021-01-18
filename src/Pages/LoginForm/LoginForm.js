@@ -4,7 +4,7 @@ import Input from '../../Components/Input/Input';
 import Button from '../../Components/Button/Button';
 import useForms from '../../Hooks/useForms/useForms';
 import { UserContext } from '../../Hooks/UserContext/UserContext';
-import Error from '../../Helper/Error';
+import Error from '../../Helper/Error/Error';
 
 import styles from './LoginForm.module.css';
 
