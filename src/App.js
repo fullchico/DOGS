@@ -11,8 +11,8 @@ import Header from './Components/Header/Header';
 
 // pages
 import Home from './Pages/Home/Home';
-import Login from './Pages/Login/Login';
-import User from './Pages/User/User';
+import Login from './Pages/Login/LoginController/LoginController';
+import User from './Pages/User/UserController/UserController';
 
 // virificacao de rota do usuario logado
 import ProtectRoutes from './Helper/ProtectRoutes/ProtectRoutes';

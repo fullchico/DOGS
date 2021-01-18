@@ -1,13 +1,13 @@
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom';
-import styles from './Login.module.css';
+import styles from './LoginController.module.css';
 
 //importar rotas
 import LoginForm from '../LoginForm/LoginForm';
 import LoginCreate from '../LoginCreate/LoginCreate';
 import LoginPasswordLost from '../LoginPasswordLost/LoginLost';
 import LoginPasswordReset from '../LoginPasswordReset/LoginPasswordReset';
-import { UserContext } from '../../Hooks/UserContext/UserContext';
+import { UserContext } from '../../../Hooks/UserContext/UserContext';
 
 const Login = () => {
 
