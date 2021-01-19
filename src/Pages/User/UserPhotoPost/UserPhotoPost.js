@@ -15,7 +15,7 @@ const UserPhotoPost = () => {
   const idade = useForm('number');
 
   const [ img , setImg ] = useState({});
-  const { data, error, laoding, request } = useFetch();
+  const { data, error, loading, request } = useFetch();
   
   const navigate = useNavigate();
 
@@ -51,14 +51,13 @@ const UserPhotoPost = () => {
          <Input label="Peso" type="text" name="peso" {...peso}/>
          <Input label="Idade" type="text" name="idade"{...idade}/>
          <input className={styles.file} type="file" name="img" id="img" onChange={hadleImgChage}/>
-         {laoding ? (
-           <Button disabled>Enviando...</Button>
-         ):(
-          <Button>Enviar</Button>
-         )}
+         {loading
+          ? (<Button disabled>Enviando...</Button>)
+          : (<Button>Enviar</Button>)
+        }
          <Error error={error}/>
        </form>
-
+            
        <div>
          {img.preview && <div className={styles.preview} style={{backgroundImage:`url('${img.preview}')`}}></div>}
        </div>

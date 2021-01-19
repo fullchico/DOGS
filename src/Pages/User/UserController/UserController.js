@@ -1,7 +1,7 @@
 import React,{useContext} from 'react'
 import { Route, Routes } from 'react-router-dom';
 import UserHeader from '../UserHeader/UserHeader';
-import Feed from '../../../Components/Feed/Feed';
+import Feed from '../../../Components/Feed/FeedController/FeedController';
 import UserPhotoPost from '../UserPhotoPost/UserPhotoPost';
 import UserStats from '../UserStats/UserStats';
 const UserController = () => {
