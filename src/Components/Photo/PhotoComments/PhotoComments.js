@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
+import {UserContext} from '../../../Hooks/UserContext/UserContext'
+import PhotoComentsForm from '../PhotoComentsForm/PhotoComentsForm'
+import style from './PhotoComments.module.css';
+const PhotoComments = (props) => {
+  const [comments, setComments ] = useState(() => props.comments)
+  const commentsSection = useRef(null)
+  const {login} = useContext(UserContext)
 
-const PhotoComments = () => {
+
+  // scroll comentarios
+  useEffect(() => {
+    commentsSection.current.scrollTop = commentsSection.current.scrollHeight;
+  },[comments])
   return (
-    <div>
-      
-    </div>
+    <>
+      <ul ref={commentsSection} className={style.comments}>
+        {comments.map( comment => (
+          <li key={comment.comment_ID}>
+            <b>{comment.comment_author}: </b>
+            <span>{comment.comment_content}</span>
+            </li>)
+        )}
+      </ul>
+      {login && <PhotoComentsForm id={props.id} setComments={setComments}/>}
+    </>
   )
 }
 
