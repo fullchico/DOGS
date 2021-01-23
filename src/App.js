@@ -13,9 +13,11 @@ import Header from './Components/Header/Header';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/LoginController/LoginController';
 import User from './Pages/User/UserController/UserController';
+import PhotoPageId from './Components/Photo/PhotoPageId/PhotoPageId';
 
 // virificacao de rota do usuario logado
 import ProtectRoutes from './Helper/ProtectRoutes/ProtectRoutes';
+import UserProfille from './Pages/User/UserProfille/UserProfille';
 
 const App = () => {
   return (
@@ -25,6 +27,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login/*" element={<Login />} />
+          <Route path="/foto/:id" element={< PhotoPageId/>} />
+          <Route path="/perfil/:user" element={< UserProfille/>} />
           <ProtectRoutes path="/conta/*" element={<User />} />
         </Routes>
         <Footer />

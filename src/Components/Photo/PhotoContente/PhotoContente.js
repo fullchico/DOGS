@@ -5,14 +5,14 @@ import styles from './PhotoContente.module.css';
 import { UserContext } from '../../../Hooks/UserContext/UserContext';
 import ImageLoading from '../../../Helper/ImageLoading/ImageLoading';
 import PhotoDelete from '../PhotoDelete/PhotoDelete';
-const PhotoContente = ({data}) => {
+const PhotoContente = ({data, single}) => {
 
   const user = useContext(UserContext)
 
   const { photo , comments } = data
-  console.log(data)
+
   return (
-    <div className={styles.photo}>
+    <div className={`${styles.photo} ${single ? styles.single : ''}`}>
       <div className={styles.img}>
         <ImageLoading src={photo.src} alt={photo.title}/>
       </div>
@@ -33,7 +33,7 @@ const PhotoContente = ({data}) => {
             </ul>
           </div>
         </div>
-      <PhotoComments id={photo.id} comments={comments}/>
+      <PhotoComments single={single} id={photo.id} comments={comments}/>
     </div>
   )
 }
