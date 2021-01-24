@@ -14,6 +14,7 @@ const FeedPhotos = ({page, user, setModalPhoto, setInfinite}) => {
   useEffect(() => {
     
     const fetchPhotos = async () =>{
+      // marcete para parar o scroll
       const total = 3
       const{url, options } = PHOTOS_GET({page ,total, user});
       request(url, options);

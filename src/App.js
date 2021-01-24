@@ -18,6 +18,7 @@ import PhotoPageId from './Components/Photo/PhotoPageId/PhotoPageId';
 // virificacao de rota do usuario logado
 import ProtectRoutes from './Helper/ProtectRoutes/ProtectRoutes';
 import UserProfille from './Pages/User/UserProfille/UserProfille';
+import NotFound from './Components/NotFound/NotFound';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/login/*" element={<Login />} />
           <Route path="/foto/:id" element={< PhotoPageId/>} />
           <Route path="/perfil/:user" element={< UserProfille/>} />
+          <Route path="*" element={<NotFound/>} />
           <ProtectRoutes path="/conta/*" element={<User />} />
         </Routes>
         <Footer />

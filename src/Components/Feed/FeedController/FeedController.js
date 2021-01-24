@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import FeedModal from '../FeedModal/FeedModal'
 import FeedPhotos from '../FeedPhotos/FeedPhotos'
 
+
 const FeedController = ({user}) => {
   const [ modalPhoto, setModalPhoto ] = useState(null);
   const [pages, setPages] = useState([1])
@@ -41,7 +42,17 @@ const FeedController = ({user}) => {
        <FeedPhotos key={page}  user={user} page={page} setModalPhoto={setModalPhoto} setInfinite={setInfinite}/>
      ))}
       
-     
+     {
+       !infinite && !user &&(
+         <p style={{
+           textAlign:'center',
+           padding:'2rem 0 4rem 0',
+           color:'#888'
+         }}>
+           Não existem mais postagens
+         </p>
+       )
+     }
     </div>
   )
 }
