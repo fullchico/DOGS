@@ -7,6 +7,7 @@ import Input from '../../../Components/Input/Input';
 import Button from '../../../Components/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import useForms from '../../../Hooks/useForms/useForms';
+import Head from '../../../Helper/Head/Head';
 
 
 
@@ -42,8 +43,9 @@ const LoginPasswordReset = () => {
   }
 
   return (
-    <div>
-      <h1 className="title">Ressetar a senha</h1>
+    <section className='animeLeft'>
+      <Head title="Nova Senha"/>
+      <h1 className="title">Resetar a senha</h1>
       <form onSubmit={handleSubmit}>
         <Input label="Nova Senha" type="password" name="password" {...password} />
         
@@ -53,7 +55,7 @@ const LoginPasswordReset = () => {
 
       </form>
       <Error error={error} />
-    </div>
+    </section>
   )
 }
 

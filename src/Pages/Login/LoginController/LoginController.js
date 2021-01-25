@@ -9,6 +9,7 @@ import LoginPasswordLost from '../LoginPasswordLost/LoginLost';
 import LoginPasswordReset from '../LoginPasswordReset/LoginPasswordReset';
 import { UserContext } from '../../../Hooks/UserContext/UserContext';
 import NotFound from '../../../Components/NotFound/NotFound';
+import Head from '../../../Helper/Head/Head';
 
 const Login = () => {
 
@@ -19,6 +20,7 @@ const Login = () => {
 
   return (
     <div className={styles.login}>
+      <Head title='Login'/>
       <div className={styles.forms}>
         <Routes>
           <Route path="/" element={<LoginForm />} />

@@ -5,6 +5,7 @@ import useFetch from '../../../Hooks/useFetch/useFetch';
 import Error from '../../../Helper/Error/Error'
 import Loading from '../../../Helper/Loading/Loading'
 import { PHOTO_GET } from '../../../services/api';
+import Head from '../../../Helper/Head/Head';
 const PhotoController = () => {
 
   const { id } = useParams();
@@ -20,6 +21,7 @@ const PhotoController = () => {
     if (error)return <Error error={error}/>
     if(loading) return <Loading/>;
     if(data)return <section className="container mainContainer">
+      <Head title={data.photo.title}/>
       <PhotoContente single="true" data={data}/>
     </section>
     

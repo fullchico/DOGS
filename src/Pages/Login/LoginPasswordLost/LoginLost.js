@@ -2,6 +2,7 @@ import React from 'react'
 import Button from '../../../Components/Button/Button';
 import Input from '../../../Components/Input/Input';
 import Error from '../../../Helper/Error/Error';
+import Head from '../../../Helper/Head/Head';
 import useFetch from '../../../Hooks/useFetch/useFetch';
 import useForms from '../../../Hooks/useForms/useForms'
 import { PASSWORD_LOST } from '../../../services/api';
@@ -21,7 +22,8 @@ const LoginPasswordLost = () => {
     }
   }
   return (
-    <section>
+    <section className='animeLeft'>
+      <Head title="recupere sua senha"/>
       { data
         ? (
           <p style={{color: 'green'}}>Email enviado</p>
